@@ -66,7 +66,7 @@ public class ScientistBehavior : Enemy {
 					GetComponent<SimpleAI2D>().Player = allies[currentHelper].transform;
 
 					// If we are close enough to our ally to alert them to the dangeer...
-					if (Vector3.Distance(transform.position, allies[currentHelper].transform.position) <= 1.0) {
+					if (Vector3.Distance(transform.position, allies[currentHelper].transform.position) <= 2.0) {
 						
 						// Alert the ally.
 						allies[currentHelper].SendMessage("ReceiveAlert", monster);

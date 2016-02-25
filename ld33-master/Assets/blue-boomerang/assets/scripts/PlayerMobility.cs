@@ -3,12 +3,25 @@ using System.Collections;
 
 public class PlayerMobility : MessageBehaviour {
 
-	public float speed;
-	private Animator anim;
+	[SerializeField] private float speed;
+	[SerializeField] private float xAxis;
+	[SerializeField] private float yAxis;
 
 	public bool monsterDead = false;
 
+	void Update () {
+		xAxis = Input.GetAxis ("Horizontal");
+		yAxis = Input.GetAxis ("Vertical");
+	}	
+
 	void FixedUpdate(){ 
+
+		if (monsterDead == false) {
+			Move (xAxis, yAxis);
+			
+		} else {
+			GetComponent<SpriteRenderer>().color = Color.red;
+		} 
 
 		// Always point the player towards the cursor.
 //		var mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -36,16 +49,16 @@ public class PlayerMobility : MessageBehaviour {
 	}
 
 	protected override void OnStart () {
-		anim = GetComponent<Animator>();
+	
 	}
 
-	void Update () {
 
-		if (monsterDead == false) {
-			transform.Translate(new Vector3(Input.GetAxis("Horizontal") * speed, 0, 0), Space.World);
-			transform.Translate(new Vector3(0, Input.GetAxis ("Vertical") * speed, 0), Space.World);
-		} else {
-			GetComponent<SpriteRenderer>().color = Color.red;
-		} 
-	}	
+	void Move(float hor, float ver){
+
+		transform.Translate(new Vector3(hor * speed, 0, 0), Space.World);
+		transform.Translate(new Vector3(0, ver * speed, 0), Space.World);
+
+	}
+
 }
+

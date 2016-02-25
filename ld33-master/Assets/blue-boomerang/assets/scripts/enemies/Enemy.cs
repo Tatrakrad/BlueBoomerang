@@ -28,6 +28,11 @@ public class Enemy : MessageBehaviour {
 
 	protected bool isPossessed = false;
 
+	public Enemy(){
+
+
+	}
+
 	public enum Awareness {
 		Unaware,
 		Alarmed,
@@ -82,7 +87,7 @@ public class Enemy : MessageBehaviour {
 					isPossessed = true;
 					
 					GetComponent<Renderer>().enabled = false;
-					GetComponent<BoxCollider2D>().enabled = false;
+					GetComponent<CircleCollider2D>().enabled = false;
 				}
 			}
 		}

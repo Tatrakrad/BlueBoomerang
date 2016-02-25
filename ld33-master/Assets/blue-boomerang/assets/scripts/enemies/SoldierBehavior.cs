@@ -31,7 +31,7 @@ public class SoldierBehavior : Enemy {
 			// Check to see if anything is between the enemy and the player.
 			RaycastHit2D hit = Physics2D.Raycast(transform.position, direction, Mathf.Infinity, layerMask);
 
-			if (hit.collider.gameObject.tag.Equals("Player")) {
+			if (hit.collider.gameObject.tag.Equals("Player") && (hit.collider.transform.position - transform.position).magnitude < weaponRange) {
 
 				// Kill the player after a half-second delay.
 				hit.collider.gameObject.GetComponent<PlayerMobility>().Invoke("Die", 0.5f);

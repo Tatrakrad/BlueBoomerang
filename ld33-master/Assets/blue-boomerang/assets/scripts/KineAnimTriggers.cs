@@ -8,10 +8,10 @@ public class KineAnimTriggers : MonoBehaviour {
 
 	string olddir;
 	string dir;
-	public Animator anim;
-	private Vector3 lastPosition = Vector3.zero;
-	//public bool spider;
-	// Use this for initialization
+	[SerializeField] private Animator anim;
+	[SerializeField] private Vector3 lastPosition = Vector3.zero;
+
+
 	 void OnStart () {
 
 		anim = this.gameObject.GetComponent<Animator>();
@@ -30,7 +30,7 @@ public class KineAnimTriggers : MonoBehaviour {
 
 	void PickDirection (Vector3 vel){
 
-		if (GetComponent<SimpleAI2D>()){
+		if (this.GetComponent<SimpleAI2D>()){
 			dir = GetComponent<SimpleAI2D>().facing.ToString();
 			SetNewStates(dir);
 		}
@@ -47,9 +47,9 @@ public class KineAnimTriggers : MonoBehaviour {
 					}
 
 				} else {
-					if (vel.y >= 0.2f) {
+					if (vel.y >= 0.1f) {
 						dir = "up";
-					} else if (vel.y <= -1f*0.2f){
+					} else if (vel.y <= -1f*0.1f){
 						dir = "down";
 					}
 					else { 
@@ -60,30 +60,20 @@ public class KineAnimTriggers : MonoBehaviour {
 			
 			} else{
 
-				anim.SetTrigger("idle"); //sets idle bool
+				dir = ("idle"); //sets idle bool
 			}
-			if (dir != "") {
-				// if last direction is different from new, set triggers in animationcontroller
-				anim.SetTrigger (dir);
-			} else {
-				anim.SetTrigger("idle");
-			}
-
-			olddir = dir;
-			/* // speed debug
-			if (gameObject.GetComponentInParent<PlayerMobility>()) {
-				Debug.Log ("player moves" + dir);
-				Debug.Log("player speed x" + vel.x);
-				Debug.Log ("player speed y" + vel.y);
-			
-			}*/
-
+			//Debug.Log (this.gameObject.name + dir);
+		
 		}
+		SetNewStates(dir);
 	}
-	void SetNewStates (string dirSend){
+	public void SetNewStates (string dirSend){
 
-	
-		anim.SetTrigger (dirSend);
+		this.anim.SetTrigger (dirSend);
+		olddir = dirSend;
+		if (olddir == "idle") {
+			this.anim.ResetTrigger("idle");
+		}
 
 	}
 	public void NPCattack(){
