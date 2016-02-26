@@ -14,7 +14,7 @@ public class gameover : menu {
 		
 		if (Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.Space)) {
 			if (selection == 0) {
-				Application.LoadLevel("game");
+				Application.LoadLevel("Level_1");
 			} else if (selection == 1) {
 				Application.LoadLevel("MainMenu");
 			}

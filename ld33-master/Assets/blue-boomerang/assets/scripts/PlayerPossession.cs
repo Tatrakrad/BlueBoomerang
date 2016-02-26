@@ -28,7 +28,7 @@ public class PlayerPossession : MessageBehaviour {
 	}
 
 	void Update () {
-		if (Input.GetKeyDown("space")) {
+		if (Input.GetKeyDown("space") && possessed) {
 			EjectPossessedBody(true);
 		}
 

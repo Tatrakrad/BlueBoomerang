@@ -3,6 +3,8 @@ using System.Collections;
 
 public class howtoplay : menu {
 
+	[SerializeField] public string loadMe;
+
 	// Use this for initialization
 	void Start () {
 	
@@ -14,7 +16,7 @@ public class howtoplay : menu {
 		
 		if (Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.Space)) {
 			if (selection == 0) {
-				Application.LoadLevel("game");
+				Application.LoadLevel(loadMe);
 			}
 		}
 		
