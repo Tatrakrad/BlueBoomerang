@@ -15,10 +15,14 @@ public class GameManager : MonoBehaviour {
 	private static GameManager instance;
 	public static GameManager Instance { get { return instance; } private set { } }
 
+	//State
+	public int level = 1;
+
 	// Use this for initialization
 	void Awake () {
-
+		DontDestroyOnLoad (instance);
 		instance = this;
+	
 	}
 
 	void Start() {
@@ -55,8 +59,15 @@ public class GameManager : MonoBehaviour {
 		Time.timeScale = 1f;
 	}
 
-	void Quit(){
+	public void Quit(){
 		paused = false;
 		Application.LoadLevel ("MainMenu");
+	}
+
+	public void NextLevel(){
+		level ++;
+		string nextLevel = ("Level_" + level);
+		print ("Loading... " + nextLevel);
+		Application.LoadLevel (nextLevel);
 	}
 }

@@ -1,9 +1,21 @@
 fileFormatVersion: 2
 guid: 66f1c35d893591b4e97ca0053d05fb95
-timeCreated: 1441044003
+timeCreated: 1456679051
 licenseType: Free
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: meatsplode_0
+    21300002: meatsplode_1
+    21300004: meatsplode_2
+    21300006: meatsplode_3
+    21300008: meatsplode_4
+    21300010: meatsplode_5
+    21300012: meatsplode_6
+    21300014: meatsplode_7
+    21300016: meatsplode_8
+    21300018: meatsplode_9
+    21300020: meatsplode_10
+    21300022: meatsplode_11
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -37,7 +49,7 @@ TextureImporter:
   lightmap: 0
   rGBM: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -48,8 +60,128 @@ TextureImporter:
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
-    sprites: []
+    sprites:
+    - name: meatsplode_0
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 208
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: meatsplode_1
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 205
+        width: 20
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: meatsplode_2
+      rect:
+        serializedVersion: 2
+        x: 142
+        y: 200
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: meatsplode_3
+      rect:
+        serializedVersion: 2
+        x: 214
+        y: 205
+        width: 27
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: meatsplode_4
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 134
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: meatsplode_5
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 128
+        width: 49
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: meatsplode_6
+      rect:
+        serializedVersion: 2
+        x: 189
+        y: 125
+        width: 59
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: meatsplode_7
+      rect:
+        serializedVersion: 2
+        x: 187
+        y: 125
+        width: 6
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: meatsplode_8
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 36
+        width: 75
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: meatsplode_9
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 99
+        width: 6
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: meatsplode_10
+      rect:
+        serializedVersion: 2
+        x: 118
+        y: 48
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: meatsplode_11
+      rect:
+        serializedVersion: 2
+        x: 203
+        y: 50
+        width: 27
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 
-  assetBundleName: bb_sprite
+  assetBundleName: 
   assetBundleVariant: 

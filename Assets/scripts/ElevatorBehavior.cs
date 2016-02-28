@@ -4,10 +4,14 @@ using System.Collections;
 public class ElevatorBehavior : MonoBehaviour {
 
 	public bool open = false;
+	public bool demolevel = false;
 	public Sprite openSprite;
+	private GameObject gameManager;
 
 	// Use this for initialization
 	void Start () {
+
+		gameManager = GameObject.Find ("GameManager");
 	
 	}
 	
@@ -27,9 +31,15 @@ public class ElevatorBehavior : MonoBehaviour {
 				if (possessed.GetComponent<Enemy> ().enemyType == Enemy.EnemyType.Scientist) {
 					open = true;
 					if(this.gameObject.tag.Equals("Finish")){
+						if (!demolevel){
 
-						StartCoroutine(ElevatorWaits(3));
-						Application.LoadLevel("GameOver");
+							StartCoroutine(ElevatorWaits(3));
+							gameManager.GetComponent<GameManager>().NextLevel();
+						}
+						else {
+							StartCoroutine(ElevatorWaits(3));
+							gameManager.GetComponent<GameManager>().Quit();
+						}
 					}
 				}
 			}
