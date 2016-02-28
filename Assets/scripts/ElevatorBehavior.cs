@@ -27,6 +27,8 @@ public class ElevatorBehavior : MonoBehaviour {
 				if (possessed.GetComponent<Enemy> ().enemyType == Enemy.EnemyType.Scientist) {
 					open = true;
 					if(this.gameObject.tag.Equals("Finish")){
+
+						StartCoroutine(ElevatorWaits(3));
 						Application.LoadLevel("GameOver");
 					}
 				}
@@ -37,5 +39,11 @@ public class ElevatorBehavior : MonoBehaviour {
 			}
 		
 		}
+	}
+
+	private IEnumerator ElevatorWaits(int sec){
+		int waitseconds = sec;
+		yield return new WaitForSeconds (waitseconds);
+
 	}
 }

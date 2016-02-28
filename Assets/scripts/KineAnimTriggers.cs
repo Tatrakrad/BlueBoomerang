@@ -40,9 +40,9 @@ public class KineAnimTriggers : MonoBehaviour {
 				//anim.ResetTrigger("idle");
 
 				if (Mathf.Abs (vel.x) > Mathf.Abs (vel.y)) {
-					if (vel.x >= 0.5f) {
+					if (vel.x >= 0.2f) {
 						dir = "right";
-					} else if (vel.x < 0.5f) {
+					} else if (vel.x < 0.2f) {
 						dir = "left";
 					}
 
