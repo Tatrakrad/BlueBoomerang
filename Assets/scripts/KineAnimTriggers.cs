@@ -36,20 +36,20 @@ public class KineAnimTriggers : MonoBehaviour {
 		}
 		else{
 
-			if (Mathf.Abs (vel.x) >= 0.5f || Mathf.Abs (vel.y) >= 0.5f) {
+			if (Mathf.Abs (vel.x) >= 0.1f || Mathf.Abs (vel.y) >= 0.1f) {
 				//anim.ResetTrigger("idle");
 
 				if (Mathf.Abs (vel.x) > Mathf.Abs (vel.y)) {
-					if (vel.x >= 0.2f) {
+					if (vel.x >= 0.02f) {
 						dir = "right";
-					} else if (vel.x < 0.2f) {
+					} else if (vel.x < 0.02f) {
 						dir = "left";
 					}
 
 				} else {
-					if (vel.y >= 0.1f) {
+					if (vel.y >= 0.01f) {
 						dir = "up";
-					} else if (vel.y <= -1f*0.1f){
+					} else if (vel.y <= -1f*0.01f){
 						dir = "down";
 					}
 					else { 
